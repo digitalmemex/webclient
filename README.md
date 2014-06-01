@@ -1,8 +1,4 @@
-webclient
-=========
-
-Responsive Webclient for DeepaMehta
-
+# Responsive WebClient for DeepaMehta
 
 Based on our experience with the existing DeepaMehta webclient, we want to build the next generation interface for collaborative knowledge management. This is a draft document to describe essential components of the JavaScript based source code.
 
@@ -15,3 +11,16 @@ Based on our experience with the existing DeepaMehta webclient, we want to build
 - We will develop a renderer selection facility for compatible map renderers, so that a user can choose wich renderer she wants to use to display her data.
 
 The webclient will be realized as a standard DeepaMehta OSGI plugin without any additional server side logic. It only serves a static HTML5 file and delivers all library dependencies via AMD boot strapping.
+
+## Prototype
+
+The current implementation is just a starting point that handles the bootstrap process.
+
+To get started you have to clone and build this like any other DeepaMehta plugin
+
+    mvn clean install pax:run
+
+The local start page is accessible on http://localhost:8080/org.digitalmemex.webclient/index.html
+
+For simplicity the local DeepaMehta file repository is used as a storage for all JavaScript files,
+this enables a semi-live code experience - just edit the file and reload the page - as in most environments.
