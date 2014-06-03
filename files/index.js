@@ -1,30 +1,32 @@
 /*jslint browser: true, indent: 2, maxlen: 120 */
-/*global define */
-'use strict';
+/*global define, requirejs */
+
+// configure dependency shortcuts
+requirejs.config({
+  paths: {
+    ko: 'lib/knockoutjs/knockout',
+    text: 'lib/requirejs-text/text'
+  }
+});
 
 // define index
-define(['jQuery', 'dm4rest'], function ($, rest) {
+define(['jQuery', 'ko', 'dm4rest', 'ViewModel', 'text!topic-type-list.html'],
+function ($, ko, rest, ViewModel, template) {
+  'use strict';
 
   // jQuery ready => start up
   $(function () {
     var $body = $('body');
-    $body.text('loading ...');
 
     // query type list
     rest.get_all_topic_types(function (types) {
       $body.empty().append($('<h1>').text('DeepaMehta Topic Types'));
 
-      // create HTML list of types
-      var $list = $('<ul>');
-      types.sort(function (a, b) {
-        return a.value > b.value;
-      }).forEach(function (type) {
-        var $type = $('<li>').text(type.value + ' - ' + type.uri);
-        $list.append($type);
-      });
+      // append HTML template with knockout bindings
+      $body.append(template);
 
-      // view the type list
-      $body.append($list);
+      // create and bind the view model
+      ko.applyBindings(new ViewModel(types));
     });
   });
 });
