@@ -10,6 +10,9 @@ define('dm4rest', ['/de.deepamehta.webclient/script/util/rest_client.js'], funct
   return new RESTClient('/core'); // wrap DeepaMehta 4 REST client utility
 });
 
-// use the file repository to load the index JavaScript
-requirejs.config({ baseUrl: '/filerepo' });
+// use the file repository to load JavaScript modules and bust the browser cache
+requirejs.config({
+  baseUrl: '/filerepo',
+  urlArgs: 'bust=' +  (new Date()).getTime()
+});
 requirejs(['index']);
