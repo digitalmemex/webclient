@@ -1,4 +1,8 @@
 data
+bower_components
+files/lib
+node
+node_modules
 runner
 target
 .idea

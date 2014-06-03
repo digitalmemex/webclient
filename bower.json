@@ -1,0 +1,8 @@
+{
+  "name": "digtalmemex-webclient-libs",
+  "version": "0.0.1",
+  "dependencies": {
+    "knockoutjs": "3.1.x",
+    "requirejs-text": "2.0.x"
+  }
+}

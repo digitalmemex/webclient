@@ -24,3 +24,7 @@ The local start page is accessible on http://localhost:8080/org.digitalmemex.web
 
 For simplicity the local DeepaMehta file repository is used as a storage for all JavaScript files,
 this enables a semi-live code experience - just edit the file and reload the page - as in most environments.
+
+It is also possible to update all JavaScript dependencies on the fly in a second terminal with
+
+    mvn verify
