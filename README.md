@@ -14,6 +14,8 @@ The webclient will be realized as a standard DeepaMehta OSGI plugin without any 
 
 ## Prototype
 
+[![Build Status](https://dgf.ci.cloudbees.com/buildStatus/icon?job=digitalmemex-webclient-plugin)](https://dgf.ci.cloudbees.com/job/digitalmemex-webclient-plugin/)
+
 The current implementation is just a starting point that handles the bootstrap process.
 
 To get started you have to clone and build this like any other DeepaMehta plugin
