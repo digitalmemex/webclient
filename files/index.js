@@ -4,14 +4,12 @@
 // configure dependency shortcuts
 requirejs.config({
   paths: {
-    ko: 'lib/knockoutjs/knockout',
     text: 'lib/requirejs-text/text'
   }
 });
 
 // define index
-define(['jQuery', 'ko', 'dm4rest', 'ViewModel', 'text!topic-type-list.html'],
-function ($, ko, rest, ViewModel, template) {
+define(['jQuery', 'dm4rest'], function ($, rest) {
   'use strict';
 
   // jQuery ready => start up
@@ -21,12 +19,10 @@ function ($, ko, rest, ViewModel, template) {
     // query type list
     rest.get_all_topic_types(function (types) {
       $body.empty().append($('<h1>').text('DeepaMehta Topic Types'));
-
-      // append HTML template with knockout bindings
-      $body.append(template);
-
-      // create and bind the view model
-      ko.applyBindings(new ViewModel(types));
+      var $ul = $body.append($('<ul>'));
+      types.map(function (t) {
+        $ul.append($('<li>').text(t.uri + t.value));
+      });
     });
   });
 });
