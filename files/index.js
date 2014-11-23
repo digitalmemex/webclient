@@ -14,15 +14,15 @@ define(['jQuery', 'dm4rest'], function ($, rest) {
 
   // jQuery ready => start up
   $(function () {
-    var $body = $('body');
+    var $body = $('body'),
+        sortByValue = function (a, b) { return a.value.localeCompare(b.value); };
 
-    // query type list
+    // query and display type list
     rest.get_all_topic_types(function (types) {
       $body.empty().append($('<h1>').text('DeepaMehta Topic Types'));
-      var $ul = $body.append($('<ul>'));
-      types.map(function (t) {
-        $ul.append($('<li>').text(t.uri + t.value));
-      });
+      var $ul = $body.append($('<ul>')),
+        mapTypes = function (t) { $ul.append($('<li>').text(t.value + ' (' + t.uri + ')')); };
+      types.sort(sortByValue).map(mapTypes);
     });
   });
 });
