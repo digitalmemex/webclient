@@ -12,7 +12,7 @@ module.exports = function (grunt) {
       }
     },
     jshint: {
-      files: ['Gruntfile.js', 'package.json', 'bower.json', 'files/*.js', '!files/lib']
+      files: ['Gruntfile.js', 'package.json', 'bower.json', 'files/org/digitalmemex/webclient/*.js']
     }
   });
   grunt.registerTask('default', ['bower', 'jshint']);

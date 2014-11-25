@@ -11,6 +11,7 @@
     <packaging>bundle</packaging>
 
     <properties>
+        <dm4.version>4.4.1</dm4.version>
 
         <!-- Webserver -->
         <org.osgi.service.http.port>8080</org.osgi.service.http.port>
@@ -39,6 +40,9 @@
         <dm4.filerepo.path>${project.basedir}/files</dm4.filerepo.path>
 
         <!-- Logging -->
+        <java.util.logging.config.file>
+            ${project.basedir}/src/main/resources/logging.properties
+        </java.util.logging.config.file>
         <felix.log.level>1</felix.log.level>
         <file.encoding>UTF-8</file.encoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -48,7 +52,12 @@
         <dependency>
             <groupId>de.deepamehta</groupId>
             <artifactId>deepamehta-core</artifactId>
-            <version>4.4.1</version>
+            <version>${dm4.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>de.deepamehta</groupId>
+            <artifactId>deepamehta-files</artifactId>
+            <version>${dm4.version}</version>
         </dependency>
     </dependencies>
 
@@ -103,7 +112,7 @@
                 <configuration>
                     <instructions>
                         <Bundle-Activator>
-                            de.deepamehta.core.osgi.PluginActivator
+                            org.digitalmemex.webclient.DigitalMemexWebclientPlugin
                         </Bundle-Activator>
                     </instructions>
                 </configuration>

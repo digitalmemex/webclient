@@ -2,6 +2,6 @@
   "name": "digtalmemex-webclient-libs",
   "version": "0.0.1",
   "dependencies": {
-    "requirejs-text": "2.0.x"
+    "requirejs": "latest"
   }
 }

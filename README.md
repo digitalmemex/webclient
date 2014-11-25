@@ -22,7 +22,7 @@ To get started you have to clone and build this like any other DeepaMehta plugin
 
     mvn clean install pax:run
 
-The local start page is accessible on http://localhost:8080/org.digitalmemex.webclient/index.html
+The local start page is accessible on http://localhost:8080/dmx
 
 For simplicity the local DeepaMehta file repository is used as a storage for all JavaScript files,
 this enables a semi-live code experience - just edit the file and reload the page - as in most environments.

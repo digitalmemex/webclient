@@ -1,6 +1,5 @@
 /*jslint browser: true, indent: 2, maxlen: 120 */
 /*global define, requirejs, jQuery, RESTClient */
-'use strict';
 
 define('jQuery', ['/de.deepamehta.webclient/script/vendor/jquery/jquery-2.0.3.min.js'], function () {
   return jQuery; // wrap jQuery
@@ -12,7 +11,14 @@ define('dm4rest', ['/de.deepamehta.webclient/script/util/rest_client.js'], funct
 
 // use the file repository to load JavaScript modules and bust the browser cache
 requirejs.config({
-  baseUrl: '/filerepo',
+  baseUrl: '/filerepo/org/digitalmemex/webclient',
   urlArgs: 'bust=' +  (new Date()).getTime()
 });
-requirejs(['index']);
+
+// define index
+define(['jQuery', 'types'], function ($, types) {
+  'use strict';
+  $(function () {
+    types.load($('body').empty());
+  });
+});
