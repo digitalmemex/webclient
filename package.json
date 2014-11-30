@@ -1,10 +1,10 @@
 {
-  "name": "digtalmemex-webclient",
+  "name": "digitalmemex-webclient",
   "version": "0.0.1",
   "dependencies": {
-    "bower": "1.3.x",
+    "bower": "1.3.8",
     "grunt": "0.4.x",
-    "grunt-bower-task": "0.3.x",
+    "grunt-bower-task": "0.4.x",
     "grunt-cli": "0.1.x",
     "grunt-contrib-jshint": "0.10.x"
   }
