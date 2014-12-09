@@ -1,4 +1,4 @@
-# Responsive WebClient for DeepaMehta
+# Responsive WebClient for Digital MemeX
 
 Based on our experience with the existing DeepaMehta webclient, we want to build the next generation interface for collaborative knowledge management. This is a draft document to describe essential components of the JavaScript based source code.
 
